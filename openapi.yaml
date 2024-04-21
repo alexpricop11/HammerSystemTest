@@ -1,0 +1,13 @@
+openapi: 3.0.0
+info:
+  title: HammerSystemTest
+  description: HammerSystemTest
+  version: 1.0.0
+paths:
+  /resource:
+    get:
+      summary: HammerSystemTest
+      description: HammerSystemTest
+      responses:
+        '200':
+          description: OK
