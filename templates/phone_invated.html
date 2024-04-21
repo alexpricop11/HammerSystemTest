@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invited Phone Number</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4">Invited Phone Number</h2>
+        {% if message %}
+            <div class="alert alert-info" role="alert">
+                {{ message }}
+            </div>
+        {% endif %}
+        {% if invited_number %}
+            <div class="alert alert-success" role="alert">
+                Invited Phone Number: {{ invited_number }}
+            </div>
+        {% else %}
+            <div class="alert alert-warning" role="alert">
+                No invited number found.
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Verification Code</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Send Verification Code</h2>
+        {% if error_message %}
+            <div class="alert alert-danger" role="alert">
+                {{ error_message }}
+            </div>
+        {% endif %}
+        <!-- Formularul pentru trimiterea codului de verificare -->
+        <form method="post">
+            {% csrf_token %}
+            <!-- Adaugă bara de introducere pentru numărul de telefon -->
+            <div class="form-group">
+                <label for="id_phone_number">Phone Number:</label>
+                <input type="text" class="form-control" id="id_phone_number" name="phone_number">
+            </div>
+            <button type="submit" class="btn btn-primary">Send Code</button>
+        </form>
+        {% if verification_code %}
+            <div class="alert alert-success mt-3" role="alert">
+                Your verification code: {{ verification_code }}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

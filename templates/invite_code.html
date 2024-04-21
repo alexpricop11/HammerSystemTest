@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Активировать код приглашения</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4">Активировать код приглашения</h2>
+        <form action="profile" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="invite_code">Код приглашения:</label>
+                <input type="text" id="invite_code" name="invite_code" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Активировать код приглашения</button>
+        </form>
+    </div>
+</body>
+</html>
